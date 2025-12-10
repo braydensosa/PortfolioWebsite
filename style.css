@@ -1,0 +1,246 @@
+/* ==================================================
+   1. GLOBAL RESET & BASE
+================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==================================================
+   2. NAVBAR (ALL PAGES)
+================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 85px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+
+    transform: translateZ(0);
+    will-change: background;
+
+
+    animation: navbarFade 2.2s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes navbarFade {
+    from {
+        opacity: 0;
+        transform: translateY(-9px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- NAV LEFT (LOGO) --- */
+.nav-left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 25px;
+}
+
+.nav-left li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-left li a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 260px;
+}
+
+/* Logo images (default + hover) */
+.logo-default,
+.logo-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.4s ease;
+}
+
+.logo-hover {
+    opacity: 0;
+}
+
+.nav-left a:hover .logo-default {
+    opacity: 0;
+}
+
+.nav-left a:hover .logo-hover {
+    opacity: 1;
+}
+
+/* --- NAV RIGHT (LINKS) --- */
+.nav-right {
+    display: flex;
+    list-style: none;
+    height: 100%;
+}
+
+.nav-right li {
+    height: 100%;
+}
+
+.nav-right li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    padding: 0 40px;
+    font-size: 18px;
+
+    text-decoration: none;
+    color: rgba(229, 228, 226, 1);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.nav-right li a:hover {
+    background-color: rgba(255, 255, 255, 0.37);
+    color: #000;
+}
+
+/* Icons */
+.nav-right li a img {
+    height: 22px;
+    width: auto;
+    display: block;
+}
+
+/* ==================================================
+   3. HOME PAGE BACKGROUND (index.html)
+================================================== */
+.home-bg {
+    background-color: rgb(40, 40, 40);
+    background-image: url("../images/naturebg1.jpg");
+    background-position: center 67%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+}
+
+
+/* ==================================================
+   HOME BODY BACKGROUNDS (sections under header)
+================================================== */
+
+#about {
+    background-color: rgb(229, 228, 226);
+}
+
+#projects {
+    background-color: rgb(229, 228, 226);
+}
+
+#contact {
+    background-color: rgb(40, 40, 40);
+}
+
+
+/* ==================================================
+    HEADER PAGE BACKGROUNDS (top banner images)
+================================================== */
+
+/* About page header */
+.about-header-bg {
+    background-color: rgb(40, 40, 40);
+    background-image: url("images/about-header.jpg");
+    background-position: center 46%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 45vh;
+}
+
+/* Projects page header */
+.projects-header-bg {
+    background-color: rgb(40, 40, 40);
+    background-image: url("images/naturebg3.jpg");
+    background-position: center 46%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 45vh;
+}
+
+/* Contact page header */
+.contact-header-bg {
+    background-color: rgb(40, 40, 40);
+    background-image: url("images/naturebg2.jpg");
+    background-position: center 68%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 45vh;
+}
+
+/* ==================================================
+   HEADER BODY BACKGROUNDS (sections under header)
+================================================== */
+
+.page-background {
+    min-height: 100vh;
+    padding: 60px;
+    color: #000;
+}
+
+/* About page section */
+.about-page-bg {
+    height: 100vh;
+    padding: 60px;
+    background-color: rgb(229, 228, 226);
+    color: #000;
+}
+
+/* Projects page section */
+.projects-page-bg {
+    height: 100vh;
+    padding: 60px;
+    background-color: rgb(229, 228, 226);
+    color: #000;
+}
+
+/* Contact page section */
+.contact-page-bg {
+    height: 100vh;
+    padding: 60px;
+    background-color: rgb(229, 228, 226);
+    color: #000;
+}
+
+/* ==================================================
+   OPTIONAL DEFAULT CONTENT SECTION (index only)
+================================================== */
+.section {
+    height: 60vh;
+    padding: 60px;
+    background-color: rgb(229, 228, 226);
+    color: #000;
+}

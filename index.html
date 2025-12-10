@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Project Title</title>
+
+    <link rel="preload" href="images/naturebg1.jpg" as="image">
+    <link rel="preload" href="images/#.jpg" as="image">
+    <link rel="preload" href="images/naturebg3.jpg" as="image">
+    <link rel="preload" href="images/naturebg2.jpg" as="image">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="home-bg header-fade-bg" id="home">
+    <nav class="navbar">
+
+        <ul class="nav-left">
+            <li>
+                <a href="../index.html">
+                    <img class="logo-default" src="images/name.png" alt="Site Logo">
+                    <img class="logo-hover" src="images/name 3.png" alt="Site Logo Hover">
+                </a>
+            </li>
+        </ul>
+
+        <ul class="nav-right">
+            <li><a href="about/about.html">About</a></li>
+            <li><a href="projects/projects.html">Projects</a></li>
+            <li><a href="contact/contact.html">Contact</a></li>
+
+            <li>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">
+                    <img src="images/Facebook_Logo_Primary.png" alt="Facebook">
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.linkedin.com/in/brayden-sosa-0028a9396/"
+                   target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                    <img src="images/LI-In-Bug.png" alt="LinkedIn">
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+<section id="about" class="section">
+    <h1>About</h1>
+    <p>Text</p>
+</section>
+
+<section id="projects" class="section">
+    <h1>Projects</h1>
+    <p>Text</p>
+</section>
+
+<section id="contact" class="section">
+    <h1>Contact</h1>
+    <p>Text</p>
+</section>
+
+<!-- Page fade-in/out -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("fade-in");
+    });
+
+    window.addEventListener("beforeunload", () => {
+        document.body.classList.add("fade-out");
+    });
+</script>
+
+<!-- Background fade-in -->
+<script>
+    const header = document.querySelector("header");
+    const style = getComputedStyle(header);
+    const bgUrl = style.backgroundImage.slice(5, -2);
+
+    const img = new Image();
+    img.src = bgUrl;
+
+    img.onload = () => {
+        header.classList.add("bg-loaded");
+    };
+</script>
+
+</body>
+</html>
